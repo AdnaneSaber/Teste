@@ -9,8 +9,10 @@ import {
   PlayfairDisplay_800ExtraBold,
 } from "@expo-google-fonts/playfair-display";
 import Ionicons from "react-native-vector-icons/Ionicons";
-
-export default function Header() {
+type HeaderProps = {
+  count: number;
+};
+export default function Header({ count }: HeaderProps) {
   let [fontsLoaded] = useFonts({
     PlayfairDisplay_400Regular,
     PlayfairDisplay_800ExtraBold,
@@ -49,6 +51,7 @@ export default function Header() {
             size={24}
             style={{ backgroundColor: "transparent" }}
           />
+          {count}
         </Text>
       </View>
     );
